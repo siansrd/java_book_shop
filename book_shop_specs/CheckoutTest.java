@@ -19,6 +19,11 @@ public class CheckoutTest {
   public void checkGetBasket() {
     assertNotNull(checkout1.getBasket());
   }
+
+  // @Test
+  // public void checkHasCustomerLoyaltyCard() {
+  //   assertEquals(false, )
+  // }
   
 
 }

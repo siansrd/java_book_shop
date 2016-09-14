@@ -15,9 +15,16 @@ public class Basket {
     return customer;
   }
 
-  public ArrayList getBasketContents() {
+  public ArrayList getContents() {
     return contents;
   }
 
+  public int countItems() {
+    return contents.size();
+  }
+
+  public void addItem(Product item) {
+    contents.add(item);
+  }
 
 }
