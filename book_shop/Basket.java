@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Basket {
 
-  ArrayList contents;
+  ArrayList<Product> contents;
   Customer customer;
 
   public Basket(Customer customer) {
@@ -26,5 +26,21 @@ public class Basket {
   public void addItem(Product item) {
     contents.add(item);
   }
+
+  public void removeItem(Product item) {
+      contents.remove(item);
+  }
+
+  public void emptyContents() {
+      contents.clear();
+  }
+
+  // public void removeItem(String title) {
+  //   for (Product item : contents) {
+  //     if (item.getTitle() == title) { 
+  //     contents.remove(item);
+  //     }
+  //   }
+  // }
 
 }

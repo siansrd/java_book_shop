@@ -38,5 +38,19 @@ public class BasketTest {
     assertEquals(1, basket1.countItems());
   }
 
+  @Test
+  public void canRemoveItem() {
+    basket1.addItem(book1);
+    basket1.removeItem(book1);
+    assertEquals(0, basket1.countItems());
+  }
+
+  @Test
+  public void canEmptyContents() {
+    basket1.addItem(book1);
+    basket1.emptyContents();
+    assertEquals(0, basket1.countItems());
+  }
+
 
 }
