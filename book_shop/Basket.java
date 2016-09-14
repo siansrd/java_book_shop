@@ -28,11 +28,19 @@ public class Basket {
   }
 
   public void removeItem(Product item) {
-      contents.remove(item);
+    contents.remove(item);
   }
 
   public void emptyContents() {
-      contents.clear();
+    contents.clear();
+  }
+
+  public Double totalItems() {
+    Double total = 0.00;
+    for (Product item : contents) {
+      total += item.getPrice();
+    }
+    return total;
   }
 
   // public void removeItem(String title) {

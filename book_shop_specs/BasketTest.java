@@ -8,12 +8,14 @@ public class BasketTest {
   Customer customer1;
   Basket basket1;
   Book book1;
+  Stationary postit;
 
   @Before
   public void before() {
     Customer customer1 = new Customer("Sian");
     basket1 = new Basket(customer1);
     book1 = new Book(12.99, "Infinite Jest", "David F. Wallace", GenreType.FICTION);
+    postit = new Stationary(2.99, "Post-It Notes");
   }
 
   @Test
@@ -50,6 +52,13 @@ public class BasketTest {
     basket1.addItem(book1);
     basket1.emptyContents();
     assertEquals(0, basket1.countItems());
+  }
+
+  @Test
+  public void canTotalItems() {
+    basket1.addItem(book1);
+    basket1.addItem(postit);
+    assertEquals((Double)15.98, basket1.totalItems());
   }
 
 
