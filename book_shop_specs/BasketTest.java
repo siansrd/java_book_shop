@@ -5,7 +5,7 @@ import book_shop.*;
 
 public class BasketTest {
 
-  Checkout checkout1;
+  Customer customer1;
   Basket basket1;
 
   @Before
@@ -18,6 +18,11 @@ public class BasketTest {
   public void hasGetBasketCustomer() {
     Customer customer = basket1.getBasketsCustomer();
     assertEquals("Sian", customer.getName());
+  }
+
+  @Test
+  public void hasGetBasketContents() {
+    assertNotNull(basket1.getBasketContents());
   }
 
 

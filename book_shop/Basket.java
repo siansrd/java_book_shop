@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Basket {
 
-  Customer customer;
   ArrayList contents;
+  Customer customer;
 
   public Basket(Customer customer) {
     contents = new ArrayList<Product>();
@@ -13,6 +13,10 @@ public class Basket {
 
   public Customer getBasketsCustomer() {
     return customer;
+  }
+
+  public ArrayList getBasketContents() {
+    return contents;
   }
 
 
