@@ -9,11 +9,15 @@ public class Book extends Product implements PageTurnable {
   public Book(Double price, String title, String author, GenreType genre){
     super(price, title);
     this.author = author;
-    this.genre = genre;
+    this.genre  = genre;
   }
 
   public GenreType getGenre() {
     return genre;
+  }
+
+  public String getAuthor() {
+    return author;
   }
 
   

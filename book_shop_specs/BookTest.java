@@ -16,5 +16,21 @@ public class BookTest {
     assertEquals((Double)12.99, book1.getPrice());
   }
 
+  @Test
+  public void hasGetTitle() {
+    assertEquals("Infinite Jest", book1.getTitle());
+  }
+
+  @Test
+  public void hasGetGenre() {
+    assertEquals(GenreType.FICTION, book1.getGenre());
+  }
+
+  @Test
+  public void hasGetAuthor() {
+    assertEquals("David F. Wallace", book1.getAuthor());
+  }
+
+
 
 }

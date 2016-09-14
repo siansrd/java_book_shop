@@ -4,6 +4,8 @@ public enum GenreType {
 
   FICTION,
   SCIFI,
-  COMPUTING
+  COMPUTING,
+  NEWS,
+  PHYCHOLOGY
 
 } 
