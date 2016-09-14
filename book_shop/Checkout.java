@@ -12,5 +12,16 @@ public class Checkout {
     return basket;
   }
 
+  public boolean checkCustomerLoyaltyCard() {
+    Customer customer = basket.getBasketsCustomer();
+    return customer.checkLoyaltyCard();
+  }
+
+  public Double loyaltyCardDiscount() {
+    Double total = basket.totalItems();
+    Double discountedTotal = total / 100 * 98;  
+    return discountedTotal;
+  }
+
 
 }
