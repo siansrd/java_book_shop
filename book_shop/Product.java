@@ -18,5 +18,9 @@ public abstract class Product {
     return title;
   }
 
+  // public String formatPrice() {
+  //     return "£" + price;
+  // }
+
 
 }
