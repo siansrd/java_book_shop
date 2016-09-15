@@ -15,7 +15,7 @@ public class Basket {
     return customer;
   }
 
-  public ArrayList getContents() {
+  public ArrayList<Product> getContents() {
     return contents;
   }
 

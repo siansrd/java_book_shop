@@ -1,4 +1,6 @@
 package book_shop;
+import java.util.*;
+import java.util.Collections;
 
 public class Checkout {
 
@@ -12,6 +14,10 @@ public class Checkout {
     return basket;
   }
 
+  public Double roundOff(Double total) {
+    return Math.round(total * 100.0) / 100.0;
+  }
+
   public boolean checkCustomerLoyaltyCard() {
     Customer customer = basket.getBasketsCustomer();
     return customer.checkLoyaltyCard();
@@ -20,18 +26,53 @@ public class Checkout {
   public Double loyaltyCardDiscount() {
     Double total = basket.totalItems();
     Double discountedTotal = total / 100 * 98;  
-    return discountedTotal = Math.round(discountedTotal * 100.0) / 100.0;
+    return roundOff(discountedTotal);
   }
 
   public Double tenPercentOffOverTwenty() {
     Double total = basket.totalItems();
     if (total > 20.00) {
       Double discountedTotal = total / 100 * 90;
-      return discountedTotal = Math.round(discountedTotal * 100.0) / 100.0;
+      return roundOff(discountedTotal);
     } else {
-      return total = Math.round(total * 100.0) / 100.0;
+      return roundOff(total);
     }
   }
 
+
+
+  // Needs fixing: only works if there are an even number of books
+
+  public Double bOGOFF(Double total) {
+    ArrayList<Product> items = basket.getContents();
+    ArrayList<Double> bookPrices = new ArrayList<Double>();
+
+    // New ArrayList containing all book prices
+    for (Product item : items) {
+      if (item instanceof Book) {
+        bookPrices.add(item.getPrice());    
+      } 
+    }
+
+    Collections.sort(bookPrices);
+    int index = bookPrices.size() / 2;
+
+    // Remove the cheapest half of the ArrayList
+    int counter = 0;
+    for(Double price : bookPrices) {
+      while (index < counter) {
+        bookPrices.remove(counter);
+        counter += 1;
+      }
+    }
+
+    // Total the most expensive half of the ArrayList
+    Double discountedTotal = 0.00;
+    for (Double price : bookPrices) {
+      discountedTotal += price;
+    }
+    return discountedTotal;
+  }
+ 
 
 }

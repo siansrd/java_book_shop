@@ -19,6 +19,7 @@ public abstract class Product {
   }
 
   // public String formatPrice() {
+  // Double price = getPrice();
   //     return "£" + price;
   // }
 

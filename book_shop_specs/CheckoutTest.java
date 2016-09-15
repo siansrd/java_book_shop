@@ -46,6 +46,14 @@ public class CheckoutTest {
     basket1.addItem(book2);
     assertEquals((Double) 34.18, checkout1.tenPercentOffOverTwenty());
   }
+
+  @Test 
+  public void checkbOGOFF() {
+    basket1.addItem(book1);
+    basket1.addItem(book2);
+    Double total = basket1.totalItems();
+    assertEquals((Double) 24.99, checkout1.bOGOFF(total));
+  }
   
 
 }
