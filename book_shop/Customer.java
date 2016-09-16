@@ -2,8 +2,8 @@ package book_shop;
 
 public class Customer {
 
-  String name;
-  boolean loyaltyCard;
+  private String name;
+  private boolean loyaltyCard;
 
   public Customer(String name) {
     this.name = name;

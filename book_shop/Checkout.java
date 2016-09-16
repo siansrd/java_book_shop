@@ -42,7 +42,6 @@ public class Checkout {
 
 
   // Needs fixing: only works if there are an even number of books
-
   public Double bOGOFF(Double total) {
     ArrayList<Product> items = basket.getContents();
     ArrayList<Double> bookPrices = new ArrayList<Double>();
@@ -60,7 +59,7 @@ public class Checkout {
     // Remove the cheapest half of the ArrayList
     int counter = 0;
     for(Double price : bookPrices) {
-      while (index < counter) {
+      while (counter < index) {
         bookPrices.remove(counter);
         counter += 1;
       }
